@@ -21,7 +21,7 @@ apply plugin: 'docker'
 
 
 jar {
-    baseName = 'sample-config-server'
+    baseName = 'config-server'
     version =  '0.0.1'
 }
 
@@ -57,6 +57,6 @@ docker {
 }
 
 task createWrapper(type: Wrapper) {
-    gradleVersion = '2.0'
+    gradleVersion = '2.3'
 }
 

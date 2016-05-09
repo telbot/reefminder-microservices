@@ -21,7 +21,7 @@ apply plugin: 'java'
 apply plugin: 'docker'
 
 jar {
-    baseName = 'sample-user-webservice'
+    baseName = 'user-webservice'
     version =  '0.0.1'
 }
 
@@ -69,6 +69,6 @@ run {
 }
 
 task createWrapper(type: Wrapper) {
-    gradleVersion = '2.0'
+    gradleVersion = '2.3'
 }
 
