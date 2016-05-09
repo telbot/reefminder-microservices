@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rohitghatol.microservice.gateway;
+package org.reefminder.microservice.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

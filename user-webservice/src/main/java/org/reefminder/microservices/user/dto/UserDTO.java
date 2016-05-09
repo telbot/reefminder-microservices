@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rohitghatol.microservices.user.dto;
+package org.reefminder.microservices.user.dto;
 
 
 /**

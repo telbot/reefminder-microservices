@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rohitghatol.microservices.task;
+package org.reefminder.microservices.task;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

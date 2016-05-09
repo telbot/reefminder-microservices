@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rohitghatol.microservices.comments;
+package org.reefminder.microservices.comments;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

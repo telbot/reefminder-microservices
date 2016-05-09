@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rohitghatol.microservices.user.config;
+package org.reefminder.microservices.user.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

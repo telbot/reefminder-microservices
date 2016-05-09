@@ -1,4 +1,4 @@
-package com.rohitghatol.microservice.gateway.config;
+package org.reefminder.microservice.gateway.config;
 
 import java.io.IOException;
 

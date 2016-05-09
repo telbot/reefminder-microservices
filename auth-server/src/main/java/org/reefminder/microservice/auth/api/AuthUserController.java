@@ -1,4 +1,4 @@
-package com.rohitghatol.microservice.auth.api;
+package org.reefminder.microservice.auth.api;
 
 import java.security.Principal;
 

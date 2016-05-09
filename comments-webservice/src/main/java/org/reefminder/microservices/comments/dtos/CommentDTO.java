@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rohitghatol.microservices.comments.dtos;
+package org.reefminder.microservices.comments.dtos;
 
 import java.io.IOException;
 import java.util.Date;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rohitghatol.microservices.task.config;
+package org.reefminder.microservices.task.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

@@ -1,4 +1,4 @@
-package com.rohitghatol.microservices.comments.apis;
+package org.reefminder.microservices.comments.apis;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rohitghatol.microservices.comments.dtos.CommentDTO;
+import org.reefminder.microservices.comments.dtos.CommentDTO;
 
 /**
  * REST endpoint for the comments functionality<br>

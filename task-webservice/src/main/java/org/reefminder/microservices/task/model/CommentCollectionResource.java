@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rohitghatol.microservices.task.model;
+package org.reefminder.microservices.task.model;
 
 import java.io.IOException;
 import java.util.ArrayList;

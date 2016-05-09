@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rohitghatol.microservices.comments.config;
+package org.reefminder.microservices.comments.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

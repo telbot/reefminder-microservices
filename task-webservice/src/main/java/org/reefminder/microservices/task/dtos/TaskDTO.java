@@ -1,9 +1,9 @@
 /**
  * 
  */
-package com.rohitghatol.microservices.task.dtos;
+package org.reefminder.microservices.task.dtos;
 
-import com.rohitghatol.microservices.task.model.CommentCollectionResource;
+import org.reefminder.microservices.task.model.CommentCollectionResource;
 
 /**
  * Represents Todo Task.

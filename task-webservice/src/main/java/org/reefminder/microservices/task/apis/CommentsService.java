@@ -1,4 +1,4 @@
-package com.rohitghatol.microservices.task.apis;
+package org.reefminder.microservices.task.apis;
 
 import java.util.Calendar;
 
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import com.rohitghatol.microservices.task.model.CommentCollectionResource;
-import com.rohitghatol.microservices.task.model.CommentResource;
+import org.reefminder.microservices.task.model.CommentCollectionResource;
+import org.reefminder.microservices.task.model.CommentResource;
 
 /**
  * The {@link HystrixCommand} works since Spring makes a proxy to intercept the

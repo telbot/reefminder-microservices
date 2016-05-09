@@ -1,5 +1,13 @@
 To be Completed.
 
+Start-up Order
+1) config-server
+2) webservice-registry
+3) auth-server
+4) user-webservice
+
+api-gateway
+
 Issues:
 
 This sounds like it's related to https://issues.gradle.org/browse/GRADLE-2795.
