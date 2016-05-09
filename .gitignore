@@ -1,5 +1,6 @@
 /build
 /bin
 .idea/
+.idea/vcs.xml
 .gradle/
 reefminder-microservices.iml
