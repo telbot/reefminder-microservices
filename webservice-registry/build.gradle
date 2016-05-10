@@ -52,10 +52,10 @@ dependencies {
 }
 
 group = 'anilallewar'
-mainClassName = 'com.rohitghatol.microservices.registry.Application'
+mainClassName = 'org.reefinder.microservices.registry.Application'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 distDocker {
      exposePort 8761
@@ -65,7 +65,7 @@ distDocker {
 docker {
     useApi true
     hostUrl 'http://192.168.59.103:2375'
-    baseImage = 'java:7'
+    baseImage = 'java:8'
 }
 
 task createWrapper(type: Wrapper) {

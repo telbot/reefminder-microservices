@@ -14,7 +14,6 @@ buildscript {
     }
 }
 
-apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
 apply plugin: 'java'
 apply plugin: 'docker'
@@ -39,10 +38,10 @@ dependencies {
 }
 
 group = 'anilallewar'
-mainClassName = 'com.rohitghatol.microservices.config.Application'
+mainClassName = 'org.reefinder.microservices.config.Application'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 
 distDocker {
@@ -53,7 +52,7 @@ distDocker {
 docker {
     useApi true
     hostUrl 'http://192.168.59.103:2375'
-    baseImage = 'java:7'
+    baseImage = 'java:8'
 }
 
 task createWrapper(type: Wrapper) {

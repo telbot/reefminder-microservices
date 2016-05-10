@@ -44,10 +44,10 @@ dependencies {
 }
 
 group = 'anilallewar'
-mainClassName = 'com.rohitghatol.microservices.user.Application'
+mainClassName = 'org.reefinder.microservices.user.Application'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 distDocker {
     exposePort 8080
