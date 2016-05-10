@@ -1,8 +1,9 @@
 buildscript {
 	project.ext {
-        bootVersion = '1.2.3.RELEASE'
-		cloudVersion = '1.0.0.RELEASE'
-		seurityVersion = '2.0.7.RELEASE'
+        bootVersion = '1.3.3.RELEASE'
+        cloudVersion = '1.0.6.RELEASE'
+        clientVersion = '1.0.4.RELEASE'
+        securityVersion = '2.0.9.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -32,19 +33,19 @@ repositories {
 dependencies {
 	compile("org.springframework.boot:spring-boot-starter-web:${project.bootVersion}")    
     compile("org.springframework.boot:spring-boot-starter-actuator:${project.bootVersion}")
-	compile("org.springframework.cloud:spring-cloud-config-client:${project.cloudVersion}")
+	compile("org.springframework.cloud:spring-cloud-config-client:${project.clientVersion}")
 	compile("org.springframework.cloud:spring-cloud-starter-eureka:${project.cloudVersion}")
 
 	compile("org.springframework.cloud:spring-cloud-starter-security:${project.cloudVersion}")
 	compile("org.springframework.boot:spring-boot-starter-security:${project.bootVersion}")
-	compile("org.springframework.security.oauth:spring-security-oauth2:${project.seurityVersion}")
+	compile("org.springframework.security.oauth:spring-security-oauth2:${project.securityVersion}")
 
     testCompile group: 'junit', name: 'junit', version: '4.+'
     testCompile 'org.springframework:spring-test:4.0.6.RELEASE'
 }
 
 group = 'anilallewar'
-mainClassName = 'org.reefinder.microservices.user.Application'
+mainClassName = 'org.reefminder.microservices.user.Application'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -57,7 +58,7 @@ distDocker {
 docker {
     useApi true
     hostUrl 'http://192.168.59.103:2375'
-    baseImage = 'java:7'
+    baseImage = 'java:8'
 }
 
 bootRun {

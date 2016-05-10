@@ -1,8 +1,9 @@
 buildscript {
 	project.ext {
         bootVersion = '1.3.3.RELEASE'
-		cloudVersion = '1.0.0.RELEASE'
-		securityVersion = '2.0.7.RELEASE'
+		cloudVersion = '1.0.6.RELEASE'
+        clientVersion = '1.0.4.RELEASE'
+		securityVersion = '2.0.9.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -33,7 +34,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator:${project.bootVersion}")
 	compile("org.springframework.boot:spring-boot-starter-data-jpa:${project.bootVersion}")
 	compile("mysql:mysql-connector-java:5.1.30")
-	compile("org.springframework.cloud:spring-cloud-config-client:${project.cloudVersion}")
+	compile("org.springframework.cloud:spring-cloud-config-client:${project.clientVersion}")
 	compile("org.springframework.cloud:spring-cloud-starter-eureka:${project.cloudVersion}")
 	compile("org.springframework.cloud:spring-cloud-starter-zuul:${project.cloudVersion}")
 	compile("org.springframework.cloud:spring-cloud-starter-security:${project.cloudVersion}")
@@ -55,7 +56,7 @@ dependencies {
 * Spring boot application.
 */
 group = 'anilallewar'
-mainClassName = 'org.reefinder.microservice.gateway.Application'
+mainClassName = 'org.reefminder.microservice.gateway.Application'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -82,7 +83,7 @@ distDocker {
 docker {
     useApi true
     hostUrl 'http://192.168.59.103:2375'
-    baseImage = 'java:7'
+    baseImage = 'java:8'
 }
 
 bootRun {
