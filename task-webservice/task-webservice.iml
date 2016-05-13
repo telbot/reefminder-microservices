@@ -46,7 +46,6 @@
     <orderEntry type="library" exported="" name="Gradle: javax.validation:validation-api:1.1.0.Final" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.jboss.logging:jboss-logging:3.3.0.Final" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml:classmate:1.1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.codehaus.jettison:jettison:1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.netflix.netflix-commons:netflix-eventbus:0.1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.netflix.archaius:archaius-core:0.6.0" level="project" />
@@ -138,5 +137,6 @@
     <orderEntry type="library" exported="" name="Gradle: io.netty:netty-buffer:4.0.25.Final" level="project" />
     <orderEntry type="library" exported="" name="Gradle: io.netty:netty-transport:4.0.25.Final" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.netflix.ribbon:ribbon-httpclient:2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
   </component>
 </module>
