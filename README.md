@@ -3,8 +3,11 @@ To be Completed.
 Start-up Order
 1) config-server
 2) webservice-registry
-3) auth-server
-4) user-webservice
+3) api-gateway (Need to setup a database and configure)
+4) auth-server (Need to setup a database and configure)
+5) user-webservice
+6) task-webservice
+7) comments-webservice
 
 api-gateway
 
