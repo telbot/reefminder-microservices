@@ -1,0 +1,10 @@
+logging:
+  level:
+     org:
+       springframework:
+         security: DEBUG
+mongo:
+   port: 27017
+   database: testdb
+   username: testuser
+   password: testpassword
