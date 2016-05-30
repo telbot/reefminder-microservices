@@ -37,7 +37,7 @@ dependencyManagement {
 }
 
 jar {
-    baseName = 'auth-server'
+    baseName = 'auth-server-mongodb'
     version =  '0.0.1'
 }
 
@@ -71,7 +71,7 @@ dependencies {
 	//testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
-group = 'org.reefminder'
+group = 'anilallewar'
 mainClassName = 'org.reefminder.microservice.auth.Application'
 
 sourceCompatibility = 1.8

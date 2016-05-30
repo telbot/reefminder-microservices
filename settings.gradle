@@ -20,6 +20,7 @@ rootProject.name = 'reefminder-microservices'
 
 include 'api-gateway'
 include 'auth-server'
+include 'auth-server-mongodb'
 include 'comments-webservice'
 include 'config-server'
 include 'task-webservice'
