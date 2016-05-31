@@ -1,4 +1,4 @@
-package uk.co.caeldev.springsecuritymongo.domain;
+package org.reefminder.microservice.auth.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;

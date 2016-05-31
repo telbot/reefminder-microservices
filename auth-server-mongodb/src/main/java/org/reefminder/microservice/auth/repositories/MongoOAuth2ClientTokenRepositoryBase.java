@@ -1,6 +1,6 @@
-package uk.co.caeldev.springsecuritymongo.repositories;
+package org.reefminder.microservice.auth.repositories;
 
-import uk.co.caeldev.springsecuritymongo.domain.MongoOAuth2ClientToken;
+import org.reefminder.microservice.auth.domain.MongoOAuth2ClientToken;
 
 public interface MongoOAuth2ClientTokenRepositoryBase {
     boolean deleteByAuthenticationId(String authenticationId);

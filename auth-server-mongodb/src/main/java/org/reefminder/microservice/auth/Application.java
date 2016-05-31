@@ -3,12 +3,11 @@
  */
 package org.reefminder.microservice.auth;
 
+import org.reefminder.microservice.auth.config.EnableMongoBasedSecurity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 /**
  * The Main Spring Boot Application class that starts the authorization
@@ -24,8 +23,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @ComponentScan
 @EnableAutoConfiguration
 @EnableEurekaClient
-@EnableSecurityMongo
+@EnableMongoBasedSecurity
 public class Application {
+
 
 	/**
 	 * The main method.

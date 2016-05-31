@@ -1,11 +1,11 @@
-package uk.co.caeldev.springsecuritymongo.domain;
+package org.reefminder.microservice.auth.domain;
 
-import org.joda.time.LocalDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.oauth2.provider.approval.Approval.ApprovalStatus;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Document

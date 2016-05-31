@@ -1,8 +1,9 @@
-package uk.co.caeldev.springsecuritymongo.config;
+package org.reefminder.microservice.auth.config;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
+import org.reefminder.microservice.auth.services.SecurityContextService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +18,6 @@ import org.springframework.security.oauth2.client.token.ClientKeyGenerator;
 import org.springframework.security.oauth2.client.token.DefaultClientKeyGenerator;
 import org.springframework.security.oauth2.provider.token.AuthenticationKeyGenerator;
 import org.springframework.security.oauth2.provider.token.DefaultAuthenticationKeyGenerator;
-import uk.co.caeldev.springsecuritymongo.services.SecurityContextService;
 
 import static com.google.common.collect.Lists.newArrayList;
 
@@ -29,8 +29,8 @@ import static com.google.common.collect.Lists.newArrayList;
         "mongo.database",
         "mongo.username",
         "mongo.password"})
-@ComponentScan(basePackages = {"uk.co.caeldev.springsecuritymongo"})
-@EnableMongoRepositories(basePackages = {"uk.co.caeldev.springsecuritymongo.repositories"})
+@ComponentScan(basePackages = {"org.reefminder.microservice.auth"})
+@EnableMongoRepositories(basePackages = {"org.reefminder.microservice.auth.repositories"})
 public class MongoConfiguration {
 
     @Bean

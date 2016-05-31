@@ -1,19 +1,20 @@
-package uk.co.caeldev.springsecuritymongo;
+package org.reefminder.microservice.auth;
 
-import com.google.common.base.Function;
-import org.joda.time.LocalDate;
+import org.reefminder.microservice.auth.domain.MongoApproval;
+import org.reefminder.microservice.auth.repositories.MongoApprovalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.approval.Approval;
 import org.springframework.security.oauth2.provider.approval.ApprovalStore;
 import org.springframework.stereotype.Component;
-import uk.co.caeldev.springsecuritymongo.domain.MongoApproval;
-import uk.co.caeldev.springsecuritymongo.repositories.MongoApprovalRepository;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
-import static com.google.common.collect.Collections2.transform;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Component
 public class MongoApprovalStore implements ApprovalStore {
@@ -29,8 +30,7 @@ public class MongoApprovalStore implements ApprovalStore {
 
     @Override
     public boolean addApprovals(final Collection<Approval> approvals) {
-        final Collection<MongoApproval> mongoApprovals = transform(approvals, toMongoApproval());
-
+        final Collection<MongoApproval> mongoApprovals = approvals.stream().map(toMongoApproval()).collect(Collectors.toList());
         return mongoApprovalRepository.updateOrCreate(mongoApprovals);
     }
 
@@ -38,7 +38,7 @@ public class MongoApprovalStore implements ApprovalStore {
     public boolean revokeApprovals(final Collection<Approval> approvals) {
         boolean success = true;
 
-        final Collection<MongoApproval> mongoApprovals = transform(approvals, toMongoApproval());
+        final Collection<MongoApproval> mongoApprovals = approvals.stream().map(toMongoApproval()).collect(Collectors.toList());;
 
         for (final MongoApproval mongoApproval : mongoApprovals) {
             if (handleRevocationsAsExpiry) {
@@ -63,7 +63,7 @@ public class MongoApprovalStore implements ApprovalStore {
     public Collection<Approval> getApprovals(final String userId,
                                              final String clientId) {
         final List<MongoApproval> mongoApprovals = mongoApprovalRepository.findByUserIdAndClientId(userId, clientId);
-        return transform(mongoApprovals, toApproval());
+        return mongoApprovals.stream().map(toApproval()).collect(Collectors.toList());
     }
 
     private Function<Approval, MongoApproval> toMongoApproval() {
@@ -75,8 +75,8 @@ public class MongoApprovalStore implements ApprovalStore {
                         approval.getClientId(),
                         approval.getScope(),
                         approval.getStatus() == null ? Approval.ApprovalStatus.APPROVED: approval.getStatus(),
-                        LocalDate.fromDateFields(approval.getExpiresAt()),
-                        LocalDate.fromDateFields(approval.getLastUpdatedAt()));
+                        approval.getExpiresAt().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
+                        approval.getLastUpdatedAt().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
             }
         };
     }
@@ -88,9 +88,9 @@ public class MongoApprovalStore implements ApprovalStore {
                 return new Approval(mongoApproval.getUserId(),
                         mongoApproval.getClientId(),
                         mongoApproval.getScope(),
-                        mongoApproval.getExpiresAt().toDate(),
+                        Date.from(mongoApproval.getExpiresAt().atStartOfDay(ZoneId.systemDefault()).toInstant()),
                         mongoApproval.getStatus(),
-                        mongoApproval.getLastUpdatedAt().toDate());
+                        Date.from(mongoApproval.getLastUpdatedAt().atStartOfDay(ZoneId.systemDefault()).toInstant()));
             }
         };
     }

@@ -1,6 +1,6 @@
-package uk.co.caeldev.springsecuritymongo.repositories;
+package org.reefminder.microservice.auth.repositories;
 
-import uk.co.caeldev.springsecuritymongo.domain.MongoOAuth2RefreshToken;
+import org.reefminder.microservice.auth.domain.MongoOAuth2RefreshToken;
 
 public interface MongoOAuth2RefreshTokenRepositoryBase {
     MongoOAuth2RefreshToken findByTokenId(String tokenId);

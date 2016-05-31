@@ -1,7 +1,7 @@
-package uk.co.caeldev.springsecuritymongo.repositories;
+package org.reefminder.microservice.auth.repositories;
 
+import org.reefminder.microservice.auth.domain.MongoApproval;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import uk.co.caeldev.springsecuritymongo.domain.MongoApproval;
 
 public interface MongoApprovalRepository extends MongoRepository<MongoApproval, String>, MongoApprovalRepositoryBase {
 }

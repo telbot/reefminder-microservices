@@ -1,4 +1,4 @@
-package uk.co.caeldev.springsecuritymongo.repositories;
+package org.reefminder.microservice.auth.repositories;
 
 public interface UserRepositoryBase {
 

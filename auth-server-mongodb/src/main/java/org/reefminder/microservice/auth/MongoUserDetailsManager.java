@@ -1,6 +1,9 @@
-package uk.co.caeldev.springsecuritymongo;
+package org.reefminder.microservice.auth;
 
 import com.google.common.collect.Sets;
+import org.reefminder.microservice.auth.domain.User;
+import org.reefminder.microservice.auth.repositories.UserRepository;
+import org.reefminder.microservice.auth.services.SecurityContextService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +17,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
-import uk.co.caeldev.springsecuritymongo.domain.User;
-import uk.co.caeldev.springsecuritymongo.repositories.UserRepository;
-import uk.co.caeldev.springsecuritymongo.services.SecurityContextService;
 
 import java.util.Collection;
 

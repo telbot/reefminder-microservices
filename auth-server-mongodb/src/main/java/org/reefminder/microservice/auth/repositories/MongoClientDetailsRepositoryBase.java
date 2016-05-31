@@ -1,6 +1,6 @@
-package uk.co.caeldev.springsecuritymongo.repositories;
+package org.reefminder.microservice.auth.repositories;
 
-import uk.co.caeldev.springsecuritymongo.domain.MongoClientDetails;
+import org.reefminder.microservice.auth.domain.MongoClientDetails;
 
 public interface MongoClientDetailsRepositoryBase {
     boolean deleteByClientId(String clientId);

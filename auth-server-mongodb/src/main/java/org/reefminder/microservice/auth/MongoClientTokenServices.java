@@ -1,5 +1,7 @@
-package uk.co.caeldev.springsecuritymongo;
+package org.reefminder.microservice.auth;
 
+import org.reefminder.microservice.auth.domain.MongoOAuth2ClientToken;
+import org.reefminder.microservice.auth.repositories.MongoOAuth2ClientTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
@@ -8,8 +10,6 @@ import org.springframework.security.oauth2.client.token.ClientTokenServices;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.util.SerializationUtils;
 import org.springframework.stereotype.Component;
-import uk.co.caeldev.springsecuritymongo.domain.MongoOAuth2ClientToken;
-import uk.co.caeldev.springsecuritymongo.repositories.MongoOAuth2ClientTokenRepository;
 
 import java.util.UUID;
 

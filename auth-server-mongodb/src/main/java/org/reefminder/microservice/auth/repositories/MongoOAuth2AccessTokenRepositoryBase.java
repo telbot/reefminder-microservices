@@ -1,6 +1,6 @@
-package uk.co.caeldev.springsecuritymongo.repositories;
+package org.reefminder.microservice.auth.repositories;
 
-import uk.co.caeldev.springsecuritymongo.domain.MongoOAuth2AccessToken;
+import org.reefminder.microservice.auth.domain.MongoOAuth2AccessToken;
 
 import java.util.List;
 

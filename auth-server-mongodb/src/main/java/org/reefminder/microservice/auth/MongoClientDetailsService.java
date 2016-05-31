@@ -1,21 +1,20 @@
-package uk.co.caeldev.springsecuritymongo;
+package org.reefminder.microservice.auth;
 
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
-import com.google.common.collect.FluentIterable;
+import org.reefminder.microservice.auth.domain.MongoClientDetails;
+import org.reefminder.microservice.auth.repositories.MongoClientDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.provider.*;
 import org.springframework.stereotype.Component;
-import uk.co.caeldev.springsecuritymongo.domain.MongoClientDetails;
-import uk.co.caeldev.springsecuritymongo.repositories.MongoClientDetailsRepository;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import static com.google.common.collect.Lists.newArrayList;
-import static com.google.common.collect.Sets.filter;
-import static com.google.common.collect.Sets.newHashSet;
+import java.util.function.Function;
+//import java.util.function.Predicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 @Component
 public class MongoClientDetailsService implements ClientDetailsService, ClientRegistrationService {
@@ -48,7 +47,7 @@ public class MongoClientDetailsService implements ClientDetailsService, ClientRe
                 clientDetails.getResourceIds(),
                 clientDetails.getAuthorizedGrantTypes(),
                 clientDetails.getRegisteredRedirectUri(),
-                newArrayList(clientDetails.getAuthorities()),
+                new ArrayList(clientDetails.getAuthorities()),
                 clientDetails.getAccessTokenValiditySeconds(),
                 clientDetails.getRefreshTokenValiditySeconds(),
                 clientDetails.getAdditionalInformation(),
@@ -65,7 +64,7 @@ public class MongoClientDetailsService implements ClientDetailsService, ClientRe
                 clientDetails.getResourceIds(),
                 clientDetails.getAuthorizedGrantTypes(),
                 clientDetails.getRegisteredRedirectUri(),
-                newArrayList(clientDetails.getAuthorities()),
+                new ArrayList(clientDetails.getAuthorities()),
                 clientDetails.getAccessTokenValiditySeconds(),
                 clientDetails.getRefreshTokenValiditySeconds(),
                 clientDetails.getAdditionalInformation(),
@@ -96,20 +95,22 @@ public class MongoClientDetailsService implements ClientDetailsService, ClientRe
     @Override
     public List<ClientDetails> listClientDetails() {
         final List<MongoClientDetails> all = mongoClientDetailsRepository.findAll();
-        return FluentIterable.from(all).transform(toClientDetails()).toList();
+        return all.stream().map(toClientDetails()).collect(Collectors.toList());
     }
 
     private Set<String> getAutoApproveScopes(final ClientDetails clientDetails) {
         if (clientDetails.isAutoApprove("true")) {
-            return newHashSet("true"); // all scopes autoapproved
+            Set<String> hashSet = new HashSet<>();
+            hashSet.add("true");
+            return hashSet; // all scopes autoapproved
         }
-        return filter(clientDetails.getScope(), ByAutoApproveOfScope(clientDetails));
+
+        return clientDetails.getScope().stream().filter(ByAutoApproveOfScope(clientDetails)).collect(Collectors.toSet());
     }
 
     private Predicate<String> ByAutoApproveOfScope(final ClientDetails clientDetails) {
         return new Predicate<String>() {
-            @Override
-            public boolean apply(final String scope) {
+            public boolean test(final String scope) {
                 return clientDetails.isAutoApprove(scope);
             }
         };

@@ -1,7 +1,11 @@
-package uk.co.caeldev.springsecuritymongo;
+package org.reefminder.microservice.auth;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
+import org.reefminder.microservice.auth.domain.MongoOAuth2AccessToken;
+import org.reefminder.microservice.auth.domain.MongoOAuth2RefreshToken;
+import org.reefminder.microservice.auth.repositories.MongoOAuth2AccessTokenRepository;
+import org.reefminder.microservice.auth.repositories.MongoOAuth2RefreshTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2RefreshToken;
@@ -10,10 +14,6 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.AuthenticationKeyGenerator;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Component;
-import uk.co.caeldev.springsecuritymongo.domain.MongoOAuth2AccessToken;
-import uk.co.caeldev.springsecuritymongo.domain.MongoOAuth2RefreshToken;
-import uk.co.caeldev.springsecuritymongo.repositories.MongoOAuth2AccessTokenRepository;
-import uk.co.caeldev.springsecuritymongo.repositories.MongoOAuth2RefreshTokenRepository;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;

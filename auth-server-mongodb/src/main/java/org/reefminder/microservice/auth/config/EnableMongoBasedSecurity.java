@@ -1,4 +1,4 @@
-package uk.co.caeldev.springsecuritymongo.config;
+package org.reefminder.microservice.auth.config;
 
 import org.springframework.context.annotation.Import;
 
@@ -8,5 +8,5 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Documented
 @Import({ MongoConfiguration.class })
-public @interface EnableSecurityMongo {
+public @interface EnableMongoBasedSecurity {
 }

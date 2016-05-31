@@ -1,4 +1,4 @@
-package uk.co.caeldev.springsecuritymongo.domain;
+package org.reefminder.microservice.auth.domain;
 
 public enum Roles {
     USER;

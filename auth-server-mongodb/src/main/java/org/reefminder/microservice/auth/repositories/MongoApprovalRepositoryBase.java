@@ -1,8 +1,8 @@
-package uk.co.caeldev.springsecuritymongo.repositories;
+package org.reefminder.microservice.auth.repositories;
 
-import org.joda.time.LocalDate;
-import uk.co.caeldev.springsecuritymongo.domain.MongoApproval;
+import org.reefminder.microservice.auth.domain.MongoApproval;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 

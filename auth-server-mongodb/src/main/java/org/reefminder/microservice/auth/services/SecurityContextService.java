@@ -1,4 +1,4 @@
-package uk.co.caeldev.springsecuritymongo.services;
+package org.reefminder.microservice.auth.services;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
