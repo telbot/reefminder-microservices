@@ -3,8 +3,10 @@ logging:
      org:
        springframework:
          security: DEBUG
-mongo:
-   port: 27017
-   database: testdb
-   username: testuser
-   password: testpassword
+
+spring:
+   data:
+      mongodb.host: localhost
+      mongodb.port: 12345
+      mongodb.uri: mongodb://localhost/test
+      mongo.repositories.enabled: true
