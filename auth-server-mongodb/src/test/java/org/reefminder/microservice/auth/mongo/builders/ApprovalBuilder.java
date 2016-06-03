@@ -1,14 +1,15 @@
 package org.reefminder.microservice.auth.mongo.builders;
 
+import org.reefminder.microservice.auth.mongo.helpers.TestDataGenerator;
 import org.springframework.security.oauth2.provider.approval.Approval;
 
 public class ApprovalBuilder {
 
-    private String userId = string().next();
-    private String clientId = string().next();
-    private String scope = string().next();
-    private Integer expiresIn = integer().next();
-    private Approval.ApprovalStatus status = value(Approval.ApprovalStatus.class).next();
+    private String userId = TestDataGenerator.generateString().get();
+    private String clientId = TestDataGenerator.generateString().get();
+    private String scope = TestDataGenerator.generateString().get();
+    private Integer expiresIn = TestDataGenerator.generateInteger().get();;
+    private Approval.ApprovalStatus status = Approval.ApprovalStatus.APPROVED;
 
     private ApprovalBuilder() {
     }

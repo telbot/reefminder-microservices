@@ -1,22 +1,21 @@
 package org.reefminder.microservice.auth.mongo.builders;
 
-import org.joda.time.LocalDate;
+import org.reefminder.microservice.auth.mongo.domain.MongoApproval;
+import org.reefminder.microservice.auth.mongo.helpers.TestDataGenerator;
 import org.springframework.security.oauth2.provider.approval.Approval;
-import uk.co.caeldev.springsecuritymongo.domain.MongoApproval;
 
+import java.time.LocalDate;
 import java.util.UUID;
-
-import static uk.org.fyodor.jodatime.generators.RDG.localDate;
 
 public class MongoApprovalBuilder {
 
     private String id = UUID.randomUUID().toString();
-    private String userId = string().next();
-    private String clientId = string().next();
-    private String scope = string().next();
-    private Approval.ApprovalStatus status = value(Approval.ApprovalStatus.class).next();
-    private LocalDate expiresAt = localDate().next();
-    private LocalDate lastUpdatedAt = localDate().next();
+    private String userId = TestDataGenerator.generateString().get();
+    private String clientId = TestDataGenerator.generateString().get();
+    private String scope = TestDataGenerator.generateString().get();
+    private Approval.ApprovalStatus status = Approval.ApprovalStatus.DENIED;
+    private LocalDate expiresAt = LocalDate.now();
+    private LocalDate lastUpdatedAt = LocalDate.now();
 
     private MongoApprovalBuilder() {
     }

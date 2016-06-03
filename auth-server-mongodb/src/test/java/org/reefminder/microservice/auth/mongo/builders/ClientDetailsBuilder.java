@@ -1,19 +1,17 @@
 package org.reefminder.microservice.auth.mongo.builders;
 
 import com.google.common.base.Joiner;
+import org.reefminder.microservice.auth.mongo.helpers.TestDataGenerator;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.client.BaseClientDetails;
 
-import static org.reefminder.microservice.auth.mongo.commons.SecurityRDG.list;
-import static org.reefminder.microservice.auth.mongo.commons.SecurityRDG.string;
-
 public class ClientDetailsBuilder {
 
-    private String clientId = string().next();
-    private String resourceIds = Joiner.on(",").join(list(string()).next());
-    private String scopes = Joiner.on(",").join(list(string()).next());
-    private String grantTypes = Joiner.on(",").join(list(string()).next());
-    private String authorities = Joiner.on(",").join(list(string()).next());
+    private String clientId = TestDataGenerator.generateString().get();
+    private String resourceIds = TestDataGenerator.generateDelimitedStringList().get();
+    private String scopes = TestDataGenerator.generateDelimitedStringList().get();
+    private String grantTypes = TestDataGenerator.generateDelimitedStringList().get();
+    private String authorities = TestDataGenerator.generateDelimitedStringList().get();
 
     private ClientDetailsBuilder() {
     }

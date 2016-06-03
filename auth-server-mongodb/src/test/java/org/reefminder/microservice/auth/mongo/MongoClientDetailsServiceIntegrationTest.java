@@ -4,6 +4,8 @@ package org.reefminder.microservice.auth.mongo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.reefminder.microservice.auth.mongo.config.ApplicationConfiguration;
+import org.reefminder.microservice.auth.mongo.domain.MongoClientDetails;
+import org.reefminder.microservice.auth.mongo.repositories.MongoClientDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.security.oauth2.provider.ClientDetails;
@@ -12,12 +14,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.reefminder.microservice.auth.mongo.builders.MongoClientDetailsBuilder;
-import uk.co.caeldev.springsecuritymongo.domain.MongoClientDetails;
-import uk.co.caeldev.springsecuritymongo.repositories.MongoClientDetailsRepository;
 
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = ApplicationConfiguration.class)
