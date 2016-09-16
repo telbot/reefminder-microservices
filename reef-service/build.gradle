@@ -32,7 +32,7 @@ dependencyManagement {
 }
 
 jar {
-    baseName = 'task-webservice'
+    baseName = 'reef-service'
     version =  '0.0.1'
 }
 
@@ -56,8 +56,8 @@ dependencies {
     testCompile 'org.springframework:spring-test:4.0.6.RELEASE'
 }
 
-group = 'anilallewar'
-mainClassName = 'org.reefminder.microservices.task.Application'
+group = 'reefminder'
+mainClassName = 'org.reefminder.microservices.reef.Application'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -84,4 +84,3 @@ run {
 task createWrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
-

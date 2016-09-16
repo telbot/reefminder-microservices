@@ -1,4 +1,4 @@
-package org.reefminder.microservices.task.model;
+package org.reefminder.microservices.reef.model;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -22,7 +22,7 @@ public class CommentResource {
 	public static final String JP_COMMENT = "comment";
 	public static final String JP_POSTED = "posted";
 
-	/** The task id. */
+	/** The reef id. */
 	private String taskId;
 
 	/** The last name. */

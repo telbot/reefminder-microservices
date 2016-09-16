@@ -11,12 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.reefminder.microservices.user.dto.UserDTO;
 
-/**
- * REST endpoint for the user functionality
- * 
- * @author anilallewar
- *
- */
 @RestController
 @RequestMapping("/")
 public class UserController {
@@ -24,26 +18,15 @@ public class UserController {
 	@Value("${mail.domain}")
 	private String mailDomain;
 
-	private List<UserDTO> users = Arrays.asList(new UserDTO("Anil", "Allewar", "1", "anil.allewar@" + mailDomain),
-			new UserDTO("Rohit", "Ghatol", "2", "rohit.ghatol@" + mailDomain),
-			new UserDTO("John", "Snow", "3", "john.snow@" + mailDomain));
+	private List<UserDTO> users = Arrays.asList(
+			new UserDTO("Test", "User", "1", "testuser@" + mailDomain)
+	);
 
-	/**
-	 * Return all users
-	 * 
-	 * @return
-	 */
 	@RequestMapping(method = RequestMethod.GET, headers = "Accept=application/json")
 	public List<UserDTO> getUsers() {
 		return users;
 	}
 
-	/**
-	 * Return user associated with specific user name
-	 * 
-	 * @param userName
-	 * @return
-	 */
 	@RequestMapping(value = "{userName}", method = RequestMethod.GET, headers = "Accept=application/json")
 	public UserDTO getUserByUserName(@PathVariable("userName") String userName) {
 		UserDTO userDtoToReturn = null;

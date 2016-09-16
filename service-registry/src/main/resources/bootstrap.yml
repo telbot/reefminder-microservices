@@ -1,6 +1,6 @@
 spring:
   application:
-    name: webservice-registry
+    name: service-registry
   cloud:
     config:
       uri: http://localhost:8888

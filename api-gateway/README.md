@@ -9,8 +9,8 @@ It also knows how to invoke the authorization server in case the user is not aut
 ##Pre-requisites
 
 ### Projects that need to be started before
-* [config server](/../../blob/master/config-server/README.md) - For pulling the configuration information
-* [webserver-registry](/../../blob/master/webservice-registry/README.md) - For starting the Eureka server since the authorization server also is a micro-service that needs to be registered with Eureka server.    
+* [config server] - For pulling the configuration information
+* [service-registry] - For starting the Eureka server since the authorization server also is a micro-service that needs to be registered with Eureka server.
 
 ### Running the application
 * Build the application by running the `./gradlew clean build` gradle command at the "task-webservice" project root folder	on the terminal.

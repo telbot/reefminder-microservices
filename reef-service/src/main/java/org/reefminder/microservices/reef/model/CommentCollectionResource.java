@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.reefminder.microservices.task.model;
+package org.reefminder.microservices.reef.model;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package org.reefminder.microservices.task.apis;
+package org.reefminder.microservices.reef.apis;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,14 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import org.reefminder.microservices.task.dtos.TaskDTO;
+import org.reefminder.microservices.reef.dtos.TaskDTO;
 
-/**
- * REST endpoint for the task functionality
- * 
- * @author anilallewar
- *
- */
 @RestController
 @RequestMapping("/")
 public class TaskController {
@@ -29,24 +23,13 @@ public class TaskController {
 			new TaskDTO("task12", "description12", "1"), new TaskDTO("task13", "description13", "1"),
 			new TaskDTO("task21", "description21", "2"), new TaskDTO("task22", "description22", "2"));
 
-	/**
-	 * Get all tasks
-	 * 
-	 * @return
-	 */
 	@RequestMapping(method = RequestMethod.GET, headers = "Accept=application/json")
 	public List<TaskDTO> getTasks() {
 		return tasks;
 	}
 
-	/**
-	 * Get tasks for specific taskid
-	 * 
-	 * @param taskId
-	 * @return
-	 */
-	@RequestMapping(value = "{taskId}", method = RequestMethod.GET, headers = "Accept=application/json")
-	public TaskDTO getTaskByTaskId(@PathVariable("taskId") String taskId) {
+	@RequestMapping(value = "{reefId}", method = RequestMethod.GET, headers = "Accept=application/json")
+	public TaskDTO getReefByTaskId(@PathVariable("reefId") String taskId) {
 		TaskDTO taskToReturn = null;
 		for (TaskDTO currentTask : tasks) {
 			if (currentTask.getTaskId().equalsIgnoreCase(taskId)) {
@@ -61,14 +44,8 @@ public class TaskController {
 		return taskToReturn;
 	}
 
-	/**
-	 * Get tasks for specific user that is passed in
-	 * 
-	 * @param taskId
-	 * @return
-	 */
-	@RequestMapping(value = "/usertask/{userName}", method = RequestMethod.GET, headers = "Accept=application/json")
-	public List<TaskDTO> getTasksByUserName(@PathVariable("userName") String userName) {
+	@RequestMapping(value = "/reef/{userName}", method = RequestMethod.GET, headers = "Accept=application/json")
+	public List<TaskDTO> getReefByUserName(@PathVariable("userName") String userName) {
 		List<TaskDTO> taskListToReturn = new ArrayList<TaskDTO>();
 		for (TaskDTO currentTask : tasks) {
 			if (currentTask.getUserName().equalsIgnoreCase(userName)) {

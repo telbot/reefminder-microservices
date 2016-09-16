@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.reefminder.microservices.task.config;
+package org.reefminder.microservices.reef.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

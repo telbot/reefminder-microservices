@@ -1,18 +1,10 @@
-/**
- * 
- */
-package org.reefminder.microservices.task.dtos;
+package org.reefminder.microservices.reef.dtos;
 
-import org.reefminder.microservices.task.model.CommentCollectionResource;
+import org.reefminder.microservices.reef.model.CommentCollectionResource;
 
-/**
- * Represents Todo Task.
- *
- * @author rohitghatol
- */
 public class TaskDTO {
 
-	/** The task id. */
+	/** The reef id. */
 	private String taskId;
 
 	/** The last name. */
@@ -21,14 +13,14 @@ public class TaskDTO {
 	/** The completed. */
 	private boolean completed;
 
-	/** The user name with whom the task is associated. */
+	/** The user name with whom the reef is associated. */
 	private String userName;
 	
 	/** The comments. */
 	private CommentCollectionResource comments;
 	
 	/**
-	 * Instantiates a new task dto.
+	 * Instantiates a new reef dto.
 	 */
 	public TaskDTO() {
 		super();
@@ -36,9 +28,9 @@ public class TaskDTO {
 	}
 
 	/**
-	 * Instantiates a new task dto.
+	 * Instantiates a new reef dto.
 	 *
-	 * @param taskId the task id
+	 * @param taskId the reef id
 	 * @param description the description
 	 */
 	public TaskDTO(String taskId, String description, String userName) {
@@ -50,18 +42,18 @@ public class TaskDTO {
 	}
 
 	/**
-	 * Gets the task id.
+	 * Gets the reef id.
 	 *
-	 * @return the task id
+	 * @return the reef id
 	 */
 	public String getTaskId() {
 		return taskId;
 	}
 
 	/**
-	 * Sets the task id.
+	 * Sets the reef id.
 	 *
-	 * @param taskId the new task id
+	 * @param taskId the new reef id
 	 */
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
