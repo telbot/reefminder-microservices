@@ -90,7 +90,7 @@ public class MongoOAuth2AccessToken {
                 "tokenId='" + tokenId + '\'' +
                 ", token=" + Arrays.toString(token) +
                 ", authenticationId='" + authenticationId + '\'' +
-                ", username='" + username + '\'' +
+                ", username='" + username   + '\'' +
                 ", clientId='" + clientId + '\'' +
                 ", authentication=" + Arrays.toString(authentication) +
                 ", refreshToken='" + refreshToken + '\'' +

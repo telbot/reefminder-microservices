@@ -5,8 +5,8 @@ Start-up Order
 2) service-registry
 3) api-gateway (Need to setup a database and configure)
 4) auth-server (Need to setup a database and configure)
-5) user-webservice
-6) reef-webservice
+5) user-service
+6) reef-service
 
 api-gateway
 
