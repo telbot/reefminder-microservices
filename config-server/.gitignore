@@ -1,5 +1,10 @@
-/build
-/bin
 .idea/
-.gradle/
-config-server.iml
+*.iml
+*.iws
+*.ipr
+build/
+bin/
+.gradle
+
+# Mac
+.DS_Store

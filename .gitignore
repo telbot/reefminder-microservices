@@ -1,6 +1,11 @@
-/build
-/bin
 .idea/
 .idea/vcs.xml
-.gradle/
-reefminder-microservices.iml
+*.iml
+*.iws
+*.ipr
+build/
+bin/
+.gradle
+
+# Mac
+.DS_Store
